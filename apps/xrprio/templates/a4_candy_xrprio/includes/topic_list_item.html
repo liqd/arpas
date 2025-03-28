@@ -1,0 +1,34 @@
+{% load i18n module_tags %}
+
+<li class="list-item list-item--squashed">
+    <div class="list-item__stats">
+        {% spaceless %}
+        {% if object|has_feature:"rate" %}
+            <span class="rating">
+                <span class="rating-button rating-up is-read-only" title="{% translate 'Positive Ratings' %}">
+                    {{ object.positive_rating_count }}
+                    <i class="fa fa-thumbs-up" aria-label="{% translate 'Positive Ratings' %}"></i>
+                </span>
+                <span class="rating-button rating-down is-read-only" title="{% translate 'Negative Ratings' %}">
+                    {{ object.negative_rating_count }}
+                    <i class="fa fa-thumbs-down" aria-label="{% translate 'Negative Ratings' %}"></i>
+                </span>
+            </span>
+        {% endif %}
+        <span title="{% translate 'Comments' %}">
+            {{ object.comment_count }}
+            <i class="far fa-comment" aria-label="{% translate 'Comments' %}"></i>
+        </span>
+        {% endspaceless %}
+    </div>
+    <h3 class="u-first-heading">
+        <a href="{{ object.get_absolute_url }}">
+        {{ object.name }}
+        </a>
+    </h3>
+    {% if object.category %}
+        <div class="list-item__labels">
+            <span class="badge badge--big">{{ object.category }}</span>
+        </div>
+    {% endif %}
+</li>

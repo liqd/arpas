@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     "apps.polls",
     "apps.topicprio",
     "apps.debate",
+    "apps.xrprio",
 )
 
 MIDDLEWARE = (
@@ -529,6 +530,7 @@ A4_CATEGORY_ICONS = (
 )
 
 A4_BLUEPRINT_TYPES = [
+    ("XR", _("xrprio")),
     ("BS", _("brainstorming")),
     ("MBS", _("spatial brainstorming")),
     ("IC", _("idea challenge")),
@@ -705,3 +707,6 @@ CKEDITOR_5_CONFIGS = {
         },
     },
 }
+
+# ARPAS
+X_FRAME_OPTIONS = "ALLOWALL"

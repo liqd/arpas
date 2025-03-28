@@ -71,3 +71,7 @@ media/
 # vim backups
 *.swp
 site/
+
+# ARPAS specific
+!apps/xrprio/static/
+apps/xrprio/static/iframe/gltf_models/

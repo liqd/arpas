@@ -9,8 +9,22 @@ from apps.ideas import phases as ideas_phases
 from apps.interactiveevents import phases as interactiveevent_phases
 from apps.mapideas import phases as mapideas_phases
 from apps.topicprio import phases as topicprio_phases
+from apps.xrprio import phases as xr_prio_phases
 
 blueprints = [
+    (
+        "xrprio",
+        ProjectBlueprint(
+            title=_("XR Module"),
+            description=_("Participants can experience the future!"),
+            content=[
+                xr_prio_phases.PrioritizePhase(),
+            ],
+            image="images/brainstorming.svg",
+            settings_model=None,
+            type="XR",
+        ),
+    ),
     (
         "brainstorming",
         ProjectBlueprint(
