@@ -6,6 +6,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
+    arpas_arc: {
+      import: [
+        './apps/augmentedreality/assets/react_augmentedreality_init.jsx'
+      ]
+    },
     adhocracy4: {
       import: [ // array of entry points
         '@fortawesome/fontawesome-free/scss/fontawesome.scss',
@@ -161,7 +166,12 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!(adhocracy4)\/).*/, // exclude all dependencies but adhocracy4
+        // exclude: /node_modules\/(?!(adhocracy4)\/).*/, // exclude all dependencies but adhocracy4
+        include: [
+          path.resolve(__dirname, 'adhocracy-plus/assets/js'),
+          path.resolve(__dirname, 'apps'),
+          path.resolve(__dirname, 'node_modules/adhocracy4')
+        ],
         use: {
           loader: 'babel-loader',
           options: {
@@ -255,6 +265,9 @@ module.exports = {
       patterns: [{
         from: './adhocracy-plus/assets/images/**/*',
         to: 'images/[name][ext]'
+      }, {
+        from: path.resolve('./node_modules/arpas-arc/dist/gltfModels'),
+        to: './gltfModels/'
       }]
     })
   ]
