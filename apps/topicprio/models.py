@@ -2,6 +2,7 @@ from autoslug import AutoSlugField
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.urls import reverse
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
 
@@ -14,6 +15,7 @@ from adhocracy4.labels import models as labels_models
 from adhocracy4.models import query
 from adhocracy4.modules import models as module_models
 from adhocracy4.ratings import models as rating_models
+from apps.augmentedreality.models import Scene
 
 
 class TopicQuerySet(query.RateableQuerySet, query.CommentableQuerySet):
@@ -55,9 +57,14 @@ class Topic(module_models.Item):
     )
 
     objects = TopicQuerySet.as_manager()
+    _scene = GenericRelation(Scene)
 
     class Meta:
         ordering = ["-created"]
+
+    @cached_property
+    def scene(self):
+        return self._scene.first()
 
     @property
     def reference_number(self):
