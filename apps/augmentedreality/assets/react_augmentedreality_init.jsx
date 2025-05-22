@@ -1,3 +1,4 @@
+import django from 'django'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { widget as ReactWidget } from 'adhocracy4'
@@ -13,7 +14,22 @@ function init () {
       root.render(
         <React.StrictMode>
           <HashRouter>
-            <ArcApp {...props} buttonClassName="btn btn--bg-tertiary btn--small" />
+            <ArcApp
+              {...props}
+              buttonClassName="btn btn--transparent btn--centered"
+              buttonText={(
+                <>
+                  <img src="/static/images/ar_icon.svg" alt="" height="16" width="16" />
+                  {django.gettext('View in AR')}
+                </>
+              )}
+              view3dButtonText={(
+                <>
+                  <img src="/static/images/3d_icon.svg" alt="" height="16" width="16" />
+                  {django.gettext('View in 3D')}
+                </>
+              )}
+            />
           </HashRouter>
         </React.StrictMode>
       )

@@ -48,6 +48,15 @@
     text-transform: uppercase;
 }
 
+.badge.badge--note {
+    background-color: $blue-light;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: .1em;
+}
+
 // stylelint-disable selector-class-pattern
 // class names are coming from django
 .badge.badge--CONSIDERATION {

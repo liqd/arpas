@@ -4,7 +4,7 @@ from .models import Topic
 
 
 class TopicSerializer(serializers.ModelSerializer):
-    category = serializers.CharField(source="category.name")
+    category = serializers.SerializerMethodField()
     labels = serializers.SerializerMethodField()
 
     class Meta:
@@ -22,3 +22,8 @@ class TopicSerializer(serializers.ModelSerializer):
 
     def get_labels(self, topic):
         return [label.name for label in topic.labels.all()]
+
+    def get_category(self, topic):
+        if topic.category:
+            return topic.category.name
+        return None

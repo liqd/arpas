@@ -1,7 +1,5 @@
 from rest_framework import serializers
 
-from adhocracy4.maps.mixins import PointSerializerMixin
-
 from . import models
 
 
@@ -33,13 +31,16 @@ class VariantSerializer(serializers.ModelSerializer):
         return list(obj.offset_rotation.tuple)
 
 
-class ObjectSerializer(PointSerializerMixin, serializers.ModelSerializer):
+class ObjectSerializer(serializers.ModelSerializer):
     variants = VariantSerializer(many=True)
+    coordinates = serializers.SerializerMethodField()
 
     class Meta:
-        geo_field = "coordinates"
         model = models.Object
         fields = ("id", "name", "coordinates", "qr_id", "variants")
+
+    def get_coordinates(self, obj):
+        return list(obj.coordinates.tuple)
 
 
 class SceneSerializer(serializers.ModelSerializer):

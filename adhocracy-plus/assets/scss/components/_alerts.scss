@@ -36,6 +36,13 @@ $messages-margin-bottom: 25px;
     color: $text-color;
 }
 
+.alert--note {
+    background-color: $purple-lighter;
+    padding: 1.5em;
+    text-align: left;
+    color: $text-color;
+}
+
 .alert__close {
     float: right;
     color: inherit;

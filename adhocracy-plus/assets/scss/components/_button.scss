@@ -140,6 +140,12 @@
     text-align: left;
 }
 
+.btn--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn--danger {
     @extend .btn-danger;
 }

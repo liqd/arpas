@@ -1,0 +1,17 @@
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+    > * {
+        flex: 1 1;
+    }
+
+    img {
+        margin-right: .25em;
+    }
+
+    @media screen and (min-width: $breakpoint-xs) {
+        flex-direction: row;
+    }
+}
