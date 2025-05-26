@@ -8,7 +8,8 @@ module.exports = {
   entry: {
     arpas_arc: {
       import: [
-        './apps/augmentedreality/assets/react_augmentedreality_init.jsx'
+        './apps/augmentedreality/assets/react_augmentedreality_init.jsx',
+        'arpas-arc/style'
       ]
     },
     adhocracy4: {
