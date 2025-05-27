@@ -22,7 +22,7 @@
     "@react-three/fiber": "^8",
     "@react-three/xr": "^6",
     "adhocracy4": "git+https://github.com/liqd/adhocracy4#82fb1ef56b03d51b8bb9d1b2edddcb5f75a96344",
-    "arpas-arc": "git+https://github.com/liqd/arpas-arc#3bb0b399066c323b53128bc9ae86e16a2170828d",
+    "arpas-arc": "git+https://github.com/liqd/arpas-arc#df326f735d0093e062af31c7c0cb0f5dd31324bf",
     "autoprefixer": "10.4.20",
     "bootstrap": "5.2.3",
     "css-loader": "7.1.2",
@@ -59,7 +59,7 @@
     "terser-webpack-plugin": "5.3.11",
     "three": "^0.175.0",
     "timeago.js": "4.0.2",
-    "zustand": "^4.4.7"
+    "zustand": "^4.5.7"
   },
   "devDependencies": {
     "@babel/core": "7.26.0",
