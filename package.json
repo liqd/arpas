@@ -22,7 +22,7 @@
     "@react-three/fiber": "^8",
     "@react-three/xr": "^6",
     "adhocracy4": "git+https://github.com/liqd/adhocracy4#82fb1ef56b03d51b8bb9d1b2edddcb5f75a96344",
-    "arpas-arc": "git+https://github.com/liqd/arpas-arc#1bc2bc1b3931a5fb39971e7f5430f4952b718e03",
+    "arpas-arc": "git+https://github.com/liqd/arpas-arc#7d0338bcb882228c067defd2bb9ca310f7f44ee3",
     "autoprefixer": "10.4.20",
     "bootstrap": "5.2.3",
     "css-loader": "7.1.2",
